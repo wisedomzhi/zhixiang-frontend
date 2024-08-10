@@ -2,6 +2,18 @@
 /* eslint-disable */
 import { request } from '@umijs/max';
 
+/** 此处后端没有提供注释 POST /interfaceInfo/activate */
+export async function activateInterfaceInfo(body: API.IdRequest, options?: { [key: string]: any }) {
+  return request<API.BaseResponseBoolean>('/interfaceInfo/activate', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
 /** 此处后端没有提供注释 POST /interfaceInfo/add */
 export async function addInterfaceInfo(
   body: API.InterfaceInfoAddRequest,
@@ -23,6 +35,18 @@ export async function deleteInterfaceInfo(
   options?: { [key: string]: any },
 ) {
   return request<API.BaseResponseBoolean>('/interfaceInfo/delete', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** 此处后端没有提供注释 POST /interfaceInfo/forbid */
+export async function forbidInterfaceInfo(body: API.IdRequest, options?: { [key: string]: any }) {
+  return request<API.BaseResponseBoolean>('/interfaceInfo/forbid', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

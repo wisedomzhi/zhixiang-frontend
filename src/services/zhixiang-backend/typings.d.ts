@@ -87,6 +87,10 @@ declare namespace API {
     id: number;
   };
 
+  type IdRequest = {
+    id?: number;
+  };
+
   type InterfaceInfo = {
     id?: number;
     apiName?: string;
@@ -96,6 +100,7 @@ declare namespace API {
     responseHeader?: string;
     status?: number;
     method?: string;
+    requestParams?: string;
     userId?: number;
     createTime?: string;
     updateTime?: string;
@@ -282,6 +287,8 @@ declare namespace API {
     gender?: number;
     userRole?: string;
     userPassword?: string;
+    accessKey?: string;
+    secretKey?: string;
     createTime?: string;
     updateTime?: string;
     isDelete?: number;
